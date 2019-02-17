@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CD1C0EC2-E42E-4A5C-B062-40E055E599D1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ShopInventory</RootNamespace>
+    <AssemblyName>ShopInventory</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WpfPageTransitions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\dlls\WpfPageTransitions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controllers\common\BaseController.cs" />
+    <Compile Include="Lib\Entity\ProductDetail\ProductEntity.cs" />
+    <Compile Include="Pages\Billing\BillingPage.xaml.cs">
+      <DependentUpon>BillingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Common\BreadCrumb.xaml.cs">
+      <DependentUpon>BreadCrumb.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Common\DashboardForm.xaml.cs">
+      <DependentUpon>DashboardForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Common\PagingControl.xaml.cs">
+      <DependentUpon>PagingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Common\UpdateProgressView.xaml.cs">
+      <DependentUpon>UpdateProgressView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Stock\Brands\BrandHome.xaml.cs">
+      <DependentUpon>BrandHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Stock\Categories\CategoryHome.xaml.cs">
+      <DependentUpon>CategoryHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Stock\Categories\modals\AdvanceSearchBox.xaml.cs">
+      <DependentUpon>AdvanceSearchBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Stock\Categories\modals\CategoryModal.xaml.cs">
+      <DependentUpon>CategoryModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Stock\Products\modals\AdvanceSearchBox.xaml.cs">
+      <DependentUpon>AdvanceSearchBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Stock\Products\modals\ProductModal.xaml.cs">
+      <DependentUpon>ProductModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Stock\Products\ProductHome.xaml.cs">
+      <DependentUpon>ProductHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Stock\Suppliers\SupplierHome.xaml.cs">
+      <DependentUpon>SupplierHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Stock\Units\modals\AdvanceSearchBox.xaml.cs">
+      <DependentUpon>AdvanceSearchBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Stock\Units\UnitHome.xaml.cs">
+      <DependentUpon>UnitHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Test\DatagridTest.xaml.cs">
+      <DependentUpon>DatagridTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateManager.cs" />
+    <Compile Include="Utils\AllowableCharactersTextBoxBehavior.cs" />
+    <Compile Include="Utils\Defs.cs" />
+    <Compile Include="Utils\RatioConverter.cs" />
+    <Compile Include="Utils\Util.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Pages\Billing\BillingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Common\BreadCrumb.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Common\DashboardForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Common\InitialPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Common\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Common\ModalContainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Common\PagingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Common\UpdateProgressView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Stock\Brands\BrandHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Stock\Categories\CategoryHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Stock\Categories\modals\AdvanceSearchBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Stock\Categories\modals\CategoryModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Stock\Products\modals\AdvanceSearchBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Stock\Products\modals\ProductModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Stock\Products\ProductHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Stock\Suppliers\SupplierHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Stock\Units\modals\AdvanceSearchBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Stock\Units\UnitHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Test\DatagridTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Pages\Common\InitialPage.xaml.cs">
+      <DependentUpon>InitialPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Common\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Common\ModalContainer.xaml.cs">
+      <DependentUpon>ModalContainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\Billing\" />
+    <Folder Include="Controllers\Products\" />
+    <Folder Include="Pages\Common\MessageBoxs\" />
+    <Folder Include="Pages\Stock\Brands\modals\" />
+    <Folder Include="Pages\Stock\Suppliers\modals\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lib\dlls\WpfPageTransitions.dll" />
+    <Content Include="log4net.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Resources\bill.png" />
+    <Resource Include="Resources\warehouse.png" />
+    <Resource Include="Resources\logout.png" />
+    <Resource Include="Resources\smartmed.ico" />
+    <Resource Include="Resources\Bangladesh_logo.ico" />
+    <Resource Include="Resources\app_icon.ico" />
+    <Resource Include="Resources\user_auth1.png" />
+    <Resource Include="Resources\remove1.png" />
+    <Resource Include="Resources\plus1.png" />
+    <Resource Include="Resources\minus1.png" />
+    <Resource Include="Resources\ico_view1.png" />
+    <Resource Include="Resources\ico_user_menu1.png" />
+    <Resource Include="Resources\ico_user1.png" />
+    <Resource Include="Resources\ico_settings1.png" />
+    <Resource Include="Resources\ico_setting1.png" />
+    <Resource Include="Resources\ico_role1.png" />
+    <Resource Include="Resources\ico_resource1.png" />
+    <Resource Include="Resources\ico_reports1.png" />
+    <Resource Include="Resources\ico_prov1.png" />
+    <Resource Include="Resources\ico_password1.png" />
+    <Resource Include="Resources\ico_map1.png" />
+    <Resource Include="Resources\ico_groups1.png" />
+    <Resource Include="Resources\ico_group1.png" />
+    <Resource Include="Resources\ico_email_template1.png" />
+    <Resource Include="Resources\ico_email1.png" />
+    <Resource Include="Resources\ico_edit1.png" />
+    <Resource Include="Resources\ico_delete1.png" />
+    <Resource Include="Resources\ico_bulk1.png" />
+    <Resource Include="Resources\ico_authentication1.png" />
+    <Resource Include="Resources\ico_application1.png" />
+    <Resource Include="Resources\ico_adj1.png" />
+    <Resource Include="Resources\ico_accessCtrl-21.png" />
+    <Resource Include="Resources\caret_up1.gif" />
+    <Resource Include="Resources\caret_left1.gif" />
+    <Resource Include="Resources\caret_down1.gif" />
+    <Resource Include="Resources\brta_logo_21.png" />
+    <Resource Include="Resources\bg_logout1.png" />
+    <Resource Include="Resources\b_search_leave1.png" />
+    <Resource Include="Resources\b_search1.png" />
+    <Resource Include="Resources\b_save_nonHover1.png" />
+    <Resource Include="Resources\b_save_hover1.png" />
+    <Resource Include="Resources\b_reset_hover1.png" />
+    <Resource Include="Resources\b_reset1.png" />
+    <Resource Include="Resources\b_new_hover1.png" />
+    <Resource Include="Resources\b_login1.png" />
+    <Resource Include="Resources\b_export_ico_hover1.png" />
+    <Resource Include="Resources\b_export_ico1.png" />
+    <Resource Include="Resources\b_duplicate1.png" />
+    <Resource Include="Resources\b_create_new1.png" />
+    <Resource Include="Resources\b_close_hover1.png" />
+    <Resource Include="Resources\b_close1.png" />
+    <Resource Include="Resources\b_cancel_nonHover1.png" />
+    <Resource Include="Resources\b_cancel_hover1.png" />
+    <Resource Include="Resources\1dbarcode1.gif" />
+    <Resource Include="Resources\user_auth.png" />
+    <Resource Include="Resources\remove.png" />
+    <Resource Include="Resources\plus.png" />
+    <Resource Include="Resources\minus.png" />
+    <Resource Include="Resources\ico_view.png" />
+    <Resource Include="Resources\ico_user_menu.png" />
+    <Resource Include="Resources\ico_user.png" />
+    <Resource Include="Resources\ico_settings.png" />
+    <Resource Include="Resources\ico_setting.png" />
+    <Resource Include="Resources\ico_role.png" />
+    <Resource Include="Resources\ico_resource.png" />
+    <Resource Include="Resources\ico_reports.png" />
+    <Resource Include="Resources\ico_prov.png" />
+    <Resource Include="Resources\ico_password.png" />
+    <Resource Include="Resources\ico_map.png" />
+    <Resource Include="Resources\ico_groups.png" />
+    <Resource Include="Resources\ico_group.png" />
+    <Resource Include="Resources\ico_email_template.png" />
+    <Resource Include="Resources\ico_email.png" />
+    <Resource Include="Resources\ico_edit.png" />
+    <Resource Include="Resources\ico_delete.png" />
+    <Resource Include="Resources\ico_bulk.png" />
+    <Resource Include="Resources\ico_authentication.png" />
+    <Resource Include="Resources\ico_application.png" />
+    <Resource Include="Resources\ico_adj.png" />
+    <Resource Include="Resources\ico_accessCtrl-2.png" />
+    <Resource Include="Resources\d_user.png" />
+    <Resource Include="Resources\caret_up.gif" />
+    <Resource Include="Resources\caret_left.gif" />
+    <Resource Include="Resources\caret_down.gif" />
+    <Resource Include="Resources\brta_logo_2.png" />
+    <Resource Include="Resources\bg_logout.png" />
+    <Resource Include="Resources\b_search_leave.png" />
+    <Resource Include="Resources\b_search.png" />
+    <Resource Include="Resources\b_save_nonHover.png" />
+    <Resource Include="Resources\b_save_hover.png" />
+    <Resource Include="Resources\b_reset_hover.png" />
+    <Resource Include="Resources\b_reset.png" />
+    <Resource Include="Resources\b_new_hover.png" />
+    <Resource Include="Resources\b_login.png" />
+    <Resource Include="Resources\b_export_ico_hover.png" />
+    <Resource Include="Resources\b_export_ico.png" />
+    <Resource Include="Resources\b_duplicate.png" />
+    <Resource Include="Resources\b_create_new.png" />
+    <Resource Include="Resources\b_close_hover.png" />
+    <Resource Include="Resources\b_close.png" />
+    <Resource Include="Resources\b_cancel_nonHover.png" />
+    <Resource Include="Resources\b_cancel_hover.png" />
+    <Resource Include="Resources\1dbarcode.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

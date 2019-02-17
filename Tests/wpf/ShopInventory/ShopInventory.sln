@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopInventory", "ShopInventory\ShopInventory.csproj", "{CD1C0EC2-E42E-4A5C-B062-40E055E599D1}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ShopInventorySetup", "ShopInventorySetup\ShopInventorySetup.vdproj", "{44512113-0E6C-4EF7-A173-E09FE091890C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD1C0EC2-E42E-4A5C-B062-40E055E599D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD1C0EC2-E42E-4A5C-B062-40E055E599D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD1C0EC2-E42E-4A5C-B062-40E055E599D1}.Debug|x64.ActiveCfg = Debug|x64
+		{CD1C0EC2-E42E-4A5C-B062-40E055E599D1}.Debug|x64.Build.0 = Debug|x64
+		{CD1C0EC2-E42E-4A5C-B062-40E055E599D1}.Debug|x64.Deploy.0 = Debug|x64
+		{CD1C0EC2-E42E-4A5C-B062-40E055E599D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD1C0EC2-E42E-4A5C-B062-40E055E599D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD1C0EC2-E42E-4A5C-B062-40E055E599D1}.Release|x64.ActiveCfg = Release|x64
+		{CD1C0EC2-E42E-4A5C-B062-40E055E599D1}.Release|x64.Build.0 = Release|x64
+		{44512113-0E6C-4EF7-A173-E09FE091890C}.Debug|Any CPU.ActiveCfg = Debug
+		{44512113-0E6C-4EF7-A173-E09FE091890C}.Debug|x64.ActiveCfg = Debug
+		{44512113-0E6C-4EF7-A173-E09FE091890C}.Debug|x64.Build.0 = Debug
+		{44512113-0E6C-4EF7-A173-E09FE091890C}.Release|Any CPU.ActiveCfg = Release
+		{44512113-0E6C-4EF7-A173-E09FE091890C}.Release|x64.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
